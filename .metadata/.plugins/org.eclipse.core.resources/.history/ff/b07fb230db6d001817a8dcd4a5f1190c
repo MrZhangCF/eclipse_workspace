@@ -1,0 +1,14 @@
+package demo;
+class SuperClass{
+	
+	
+}
+class SubClass extends SuperClass{
+
+	
+}
+public class TestDemo {
+	public static void main(String[] args) {
+		char c[] = {'h','e','l','l','o'};
+	}
+}

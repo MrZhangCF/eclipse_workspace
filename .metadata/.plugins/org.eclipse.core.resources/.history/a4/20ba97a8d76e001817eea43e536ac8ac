@@ -1,0 +1,39 @@
+package demo;
+
+import java.util.Scanner;
+
+public class TestDemo {
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		System.out.println(n);
+		int like[] = new int[n];
+		for (int i = 0; i < n; ++i) {
+			like[i] = sc.nextInt();
+		}
+		for (int i = 0; i < n; ++i) {
+			System.out.println(like[i]);
+		}
+		int group = sc.nextInt();
+		System.out.println(group);
+		int[] l = new int[group];
+		int[] r = new int[group];
+		int[] k = new int[group];
+
+		for (int j = 0; j < group * 3; ++j) {
+			l[j / 3] = sc.nextInt();
+			r[j / 3] = sc.nextInt();
+			k[j / 3] = sc.nextInt();
+		}
+		
+		for (int s = 0; s < group; ++s) {
+			int count = 0;
+			for(int t = l[s]-1;t<=r[s]-1;++t){
+				if(like[t] == k[s])
+					count++;
+			}
+			System.out.println(count);
+		}
+	}
+}

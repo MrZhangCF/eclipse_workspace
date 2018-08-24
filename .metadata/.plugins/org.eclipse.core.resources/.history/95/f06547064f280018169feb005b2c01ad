@@ -1,0 +1,15 @@
+package action;
+
+public class ActionDemo1 {
+	private String inputName;
+	public String getInputName(){
+		return inputName;
+	}
+	public void setInputName(String inputName){
+		this.inputName = inputName;
+	}
+	public String execute(){
+		System.out.println("提交的内容"+ inputName);
+		return "success";
+	}
+}

@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+	
+  <groupId>com.zhangcf.hi</groupId><!-- 反写的公司网址+项目名 -->
+  <artifactId>hi</artifactId><!-- 项目名+模块名 -->
+  <version>0.0.1-SNAPSHOT</version><!-- 当前项目的版本号，第一个0表示大版本号，第二个0表示分支版本号，最后一位表示小版本号 ，snapshot：快照，alpha：内部测试，beta：公测，Release：稳定版本，GA：正式发布版本-->
+  <packaging>jar</packaging><!-- maven打包的方式，默认是jar，还可以是war，zip,pom -->
+
+  <name>hi</name><!-- 项目的描述名 -->
+  <url>http://maven.apache.org</url><!-- 项目的地址 -->
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies><!-- 依赖列表 -->
+    <dependency><!-- 依赖项 -->
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope><!-- 依赖的范围，这个jar只在test生命周期里使用，默认是compile，即在整个生命周期中都有效；provided：在编译和测试时有效；runtime：在测试和运行时有效，比如jdbc；system：同provided与本机系统相关联，可移植性差-->
+      <optional>false</optional><!-- 设置依赖是否可选 -->
+      <exclusions><!-- 排除依赖传递列表 -->
+      	<exclusion>
+      		
+      	</exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+  
+  <!-- 依赖的管理，这里的依赖不会被引用，而是为子项目提供选择项，比如每个项目都会用到JUnit模块，就可以定义在这里，之后的子模块直接继承就可以了 -->
+  <dependencyManagement>
+  	<dependencies>
+  		
+  	</dependencies>
+  </dependencyManagement>
+  
+  <build><!-- 为构建行为提供支持 -->
+  	<plugins><!-- 插件列表 -->
+  		<plugin><!-- 单个插件 -->
+  			<groupId>org.apache.maven.plugins</groupId><!-- 坐标信息 -->
+  			<artifactId>maven-source-plugin</artifactId>
+  			<version>2.4</version>
+  			<executions>
+  				<execution>
+  					<phase>package</phase>
+  					<goals>
+  						<goal>jar-no-fork</goal>
+  					</goals>
+  				</execution>
+  			</executions>
+  		</plugin>
+  	</plugins>
+  </build>
+  
+  <!-- 子模块对夫模块的继承 -->
+  <!-- <parent></parent> -->
+  <!-- 指定多个模块一起编译 -->
+  <modules></modules>
+</project>

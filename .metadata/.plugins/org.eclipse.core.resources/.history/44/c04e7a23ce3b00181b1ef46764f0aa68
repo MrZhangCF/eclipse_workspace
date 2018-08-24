@@ -1,0 +1,27 @@
+package test;
+
+public class TestDemo{
+	public static void main(String[] args) {
+		int m = 100;
+		int [] A = {77,22,29,50,99};
+		int [] V = {92,22,87,46,90};
+	}
+	public int backPackII(int m,int[] A,int[] V){
+		int n = A.length;
+		int lim = 1<<n;
+		int ans = 0;
+		for(int s =0;s<lim;++s){
+			int tA =0,tV=0;
+			for(int j = 0;j<n;++j){
+				if((s>>j) % 2 ==1){
+					tA+=A[j];
+					tV+=V[j];
+				}
+			}
+			if(tA<=m && tV>ans){
+				ans = tV;
+			}
+		}
+		return ans;
+	}
+}

@@ -1,0 +1,57 @@
+package service.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import mapper.Mapper;
+import pojo.All;
+import pojo.Hmd;
+import pojo.Pcp;
+import pojo.Slr;
+import pojo.Temp;
+import pojo.Wnd;
+import service.DataService;
+
+@Service
+public class DateServiceImpl implements DataService{
+
+	@Autowired
+	Mapper mapper;
+	
+	public Hmd getHmdByDate(Date date, String tablename) {
+		
+		return null;
+	}
+
+	public Pcp getPcpByDate(Date date, String tablename) {
+		
+		return null;
+	}
+
+	public Slr getSlrByDate(Date date, String tablename) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Temp getTempByDate(Date date, String tablename) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Wnd getWndByDate(Date date, String tablename) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<All> getAll(Integer num) {
+		List<All> all = mapper.getAll(57216);
+		return null;
+	}
+	
+	public static void main(String[] args) {
+		new DateServiceImpl().getAll(57216);
+	}
+}

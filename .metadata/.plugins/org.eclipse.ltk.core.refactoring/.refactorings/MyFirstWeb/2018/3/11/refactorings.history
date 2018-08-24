@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;password&apos; in &apos;demo.Information&apos; to &apos;userPassword&apos;&#x0D;&#x0A;- Original project: &apos;MyFirstWeb&apos;&#x0D;&#x0A;- Original element: &apos;demo.Information.password&apos;&#x0D;&#x0A;- Renamed element: &apos;demo.Information.userPassword&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;password&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;demo{Information.java[Information^password" name="userPassword" references="true" setter="false" stamp="1520860612035" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,15 @@
+package demo;
+
+import java.util.Scanner;
+
+public class Netease2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		
+	}
+	public static boolean check(String pw){
+		
+		return false;
+	}
+}

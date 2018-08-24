@@ -1,0 +1,6 @@
+1533082777248	Delete resource 'waterdata/src/main/java/dao'
+1533083093279	Delete resource 'waterdata/src/main/resources/mybatis/spring-mybatis.xml'
+1533083102919	Delete resource 'waterdata/src/main/resources/spring-mvc.xml'
+1533084228040	Delete resource 'waterdata/src/main/java/pojo/GetAll.java'
+1533084340608	Delete resource 'waterdata/src/main/java/mapper/DoubleMapper.java'
+1533084342991	Delete resource 'waterdata/src/main/java/mapper/DoubleMapper.xml'

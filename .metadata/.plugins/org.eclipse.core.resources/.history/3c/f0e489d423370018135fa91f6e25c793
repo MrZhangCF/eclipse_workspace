@@ -1,0 +1,21 @@
+package cn.zhangcf.demo;
+
+public class TestDemo {
+	public static void main(String[] args) {
+		System.out.println(fun());
+	}
+	@SuppressWarnings("finally")
+	public static int fun(){
+		int i = 10;
+		try{
+			i = --i / 0;
+			return i--;
+		}catch(Exception e){
+			i = i-- / 0;
+			return --i;
+		}finally{
+			--i;
+			return i--;
+		}
+	}
+}

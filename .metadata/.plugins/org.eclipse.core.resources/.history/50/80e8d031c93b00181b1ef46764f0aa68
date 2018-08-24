@@ -1,0 +1,13 @@
+package test;
+
+/**
+ * @author zhangcf
+ *
+ */
+public class TestDemo{
+	public static void main(String[] args) {
+		System.out.println("Helloworld");
+	}
+	private String name;
+	this.name = "Helloworld";
+}

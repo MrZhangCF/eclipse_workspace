@@ -1,0 +1,10 @@
+package demo;
+
+import java.util.Scanner;
+
+public class TestDemo {
+	public static void main(String[] args) {
+		String str = "1357xxxx";
+		String[] strs = str.split("x");
+	}
+}

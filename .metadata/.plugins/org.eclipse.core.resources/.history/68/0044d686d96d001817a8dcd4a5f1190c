@@ -1,0 +1,12 @@
+package demo;
+class SuperClass{
+	public void fun1(){
+		
+	}
+}
+public class TestDemo {
+	public static void main(String[] args) {
+		String s;
+		System.out.println(s);
+	}
+}

@@ -1,0 +1,17 @@
+package test;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import utils.DBUtils;
+
+public class TestDemo {
+	public static void main(String[] args) throws SQLException {
+		String msg = "zhangcf+15827235785";
+		int point = msg.indexOf("+");
+		String substr = msg.substring(0, point);
+		String substr2 = msg.substring(point + 1, msg.length());
+		System.out.println(substr);
+		System.out.println(substr2);
+	}
+}

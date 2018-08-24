@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace即命名空间，作用：sql语句的隔离(当前多用，后面还有重要作用)，即不同sql映射文件中的两个相同id的sql语句如何来区分
+	#{}作用：就是占位符，相当于JDBC中的"?"
+	parameterType：查询的参数类型
+	resultType：查询结果的数据类型
+-->
+
+<!-- mapper代理的开发规则：
+	1、namespace必须是接口的全限定名
+	2、StatementId必须和接口的方法名称一致
+	3、接口方法的参数类型要和parameterType要一致
+	4、接口方法的返回值类型要和resultType一致
+-->
+<mapper namespace="mapper.UserMapper">
+	<!-- 别名不区分大小写 -->
+	<select id="getUserById" parameterType="int" resultType="user">
+		select * from user where id=#{id};
+	</select>
+	
+	<!-- 如果查询结果返回List集合，resultType设置为List集合中的一个元素的数据类型即可
+		${}字符串拼接指令
+	-->
+	<select id="getUserByName" parameterType="string" resultType="pojo.User">
+		select * from user where username like '${value}%'
+	</select>
+	
+	<!-- 参数是pojo时，#{}中的名称就是pojo的属性（用到了对象图导航的思想） -->
+	<insert id="insertUser" parameterType="pojo.User">
+		<!-- keyProperty对应pojo的主键属性
+			resultType对应pojo的主键的数据类型
+			order是在insert语句执行之前或者之后，
+			如果使用uuid做主键，应该先生成主键然后插入数据，此时应该使用BEFORE
+		-->
+		<!-- 想要得到MySQL数据库给我们生成的主键id，即获取主键 -->
+		<selectKey keyProperty="id" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID();
+		</selectKey>
+		insert into user(username,birthday,sex,address) 
+		values(#{username},#{birthday},#{sex},#{address})
+	</insert>
+	
+	<select id="getUserByQueryVo" parameterType="queryvo" resultType="user">
+		select * from user where id=#{user.id}
+	</select>
+	
+	<!-- 查询用户表中的记录数 -->
+	<select id="getUserCount" resultType="int">
+		select count(*) from user
+	</select>
+	
+	<sql id="find_user_list_where">
+		<where>
+			<if test="id!=null">
+				and id=#{id}
+			</if>
+			<if test="username != null and username != ''">
+				and username like '%${username}%'
+			</if>
+		</where>
+	</sql>
+	
+	<sql id="user_field_list">
+		id,username,birthday,sex,address
+	</sql>
+	
+	<select id="findUserList" parameterType="user" resultType="user">
+		select <include refid="user_field_list"/> from user 
+		<include refid="find_user_list_where"/>
+	</select>
+	
+	<!-- 动态sql foreach测试 -->
+	<select id="findByUserIds" parameterType="queryvo" resultType="user">
+		select <include refid="user_field_list"/> from user
+		<where>
+			<!-- and id in(1,10,20,21,31) -->
+			<!-- <foreach collection="ids" item="id" open="and id in(" close=")" separator=",">
+				#{id}
+			</foreach> -->
+			id in
+			<foreach collection="ids" item="id" open="(" close=")" separator=",">
+				#{id}
+			</foreach>
+		</where>
+	</select>
+</mapper>

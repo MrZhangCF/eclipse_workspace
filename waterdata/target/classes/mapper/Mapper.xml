@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="mapper.Mapper">
+
+	<resultMap id="BaseResultMap" type="pojo.All">
+		<id column="DATE" property="DATE" jdbcType="DATE" />
+		<result column="HMD" property="HMD" jdbcType="DOUBLE" />
+		<result column="PCP" property="PCP" jdbcType="DOUBLE" />
+		<result column="SLR" property="SLR" jdbcType="BIGINT" />
+		<result column="MAX" property="MAX" jdbcType="INTEGER" />
+		<result column="MIN" property="MIN" jdbcType="INTEGER" />
+		<result column="WND" property="WND" jdbcType="DOUBLE" />
+
+	</resultMap>
+
+	<resultMap type="pojo.Hmd" id="hmdResult">
+		<id column="DATE" property="DATE" jdbcType="DATE" />
+		<result column="HMD" property="HMD" jdbcType="DOUBLE" />
+	</resultMap>
+	
+	<resultMap type="pojo.Pcp" id="pcpResult">
+		<id column="DATE" property="DATE" jdbcType="DATE" />
+		<result column="PCP" property="PCP" jdbcType="DOUBLE" />
+	</resultMap>
+	
+	<resultMap type="pojo.Slr" id="slrResult">
+		<id column="DATE" property="DATE" jdbcType="DATE" />
+		<result column="SLR" property="SLR" jdbcType="BIGINT" />
+	</resultMap>
+	
+	<resultMap type="pojo.Temp" id="tempResult">
+		<id column="DATE" property="DATE" jdbcType="DATE" />
+		<result column="MAX" property="MAX" jdbcType="INTEGER" />
+		<result column="MIN" property="MIN" jdbcType="INTEGER" />
+	</resultMap>
+	
+	<resultMap type="pojo.Wnd" id="wndResult">
+		<id column="DATE" property="DATE" jdbcType="DATE" />
+		<result column="WND" property="WND" jdbcType="DOUBLE" />
+	</resultMap>
+
+	<!-- <sql id="All_column_list">
+		hmd.DATE, hmd.HMD, pcp.PCP, slr.SLR, temp.MAX, temp.MIN,
+		wnd.WND
+	</sql> -->
+
+	<select id="getAll" resultMap="BaseResultMap" parameterType="java.lang.String">
+		call getall(#{num});
+	</select>
+	
+	<select id="getHmd" resultMap="hmdResult" parameterType="java.lang.String">
+		call pp(#{num});
+	</select>
+	
+	<select id="getPcp" resultMap="pcpResult" parameterType="java.lang.String">
+		call getpcp(#{num});
+	</select>
+	
+	<select id="getSlr" resultMap="slrResult" parameterType="java.lang.String">
+		call getslr(#{num});
+	</select>
+	
+	<select id="getTemp" resultMap="tempResult" parameterType="java.lang.String">
+		call gettemp(#{num});
+	</select>
+	
+	<select id="getWnd" resultMap="wndResult" parameterType="java.lang.String">
+		call getwnd(#{num});
+	</select>
+</mapper>

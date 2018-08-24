@@ -1,0 +1,48 @@
+package test;
+
+public class TestDemo {
+	public static void main(String[] args) {
+		int m = 100;
+		int[] A = { 77, 22, 29, 50, 99 };
+		int[] V = { 92, 22, 87, 46, 90 };
+		//backPackII(m, A, V);
+		//System.out.println(backPackII(m, A, V));
+		System.out.println(backPackIII(m, A, V));
+	}
+
+	public static int backPackII(int m, int[] A, int[] V) {
+		int n = A.length;
+		int lim = 1 << n;
+		int ans = 0;
+		for (int s = 0; s < lim; ++s) {
+			int tA = 0, tV = 0;
+			System.out.print("s= " + s + " ");
+			for (int j = 0; j < n; ++j) {
+				if ((s >> j) % 2 == 1) {
+					System.out.print("A[" + j + "]" + " ");
+					tA += A[j];
+					tV += V[j];
+				}
+			}
+			System.out.println("");
+			if (tA <= m && tV > ans) {
+				ans = tV;
+			}
+		}
+		return ans;
+	}
+	
+	public static int backPackIII(int m,int[] A,int[] V){
+		int n = A.length;
+		int [][] bp = new int[n+1][m+1];
+		for(int i=1;i<=n;++i){
+			for(int j=0;j<=m;++j){
+				bp[i][j] = bp[i-1][j];
+				if(j>=A[i-1]){
+					bp[i][j] = Math.max(bp[i][j], bp[i-1][j-A[i-1]] + V[i-1]);
+				}
+			}
+		}
+		return bp[n][m];
+	}
+}

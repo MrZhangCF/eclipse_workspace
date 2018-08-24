@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;action.PicturePost&apos; to &apos;PicturePostAndMsgGet&apos;&#x0D;&#x0A;- Original project: &apos;System&apos;&#x0D;&#x0A;- Original element: &apos;action.PicturePost&apos;&#x0D;&#x0A;- Renamed element: &apos;action.PicturePostAndMsgGet&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;PicturePost&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;action{PicturePost.java[PicturePost" matchStrategy="1" name="PicturePostAndMsgGet" qualified="false" references="true" similarDeclarations="false" stamp="1522373397603" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,22 @@
+package demo;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class TestDemo2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int [] fav = new int[n];
+		for(int i = 0;i<n;++i){
+			fav[i] = sc.nextInt();
+		}
+		Map<Integer, List<Integer>> map = new HashMap<>();
+		for(int j = 0;j<n;++j){
+			int key = fav[j];
+			int value = j+1;
+			if()
+		}
+			
+	}
+}

@@ -1,0 +1,15 @@
+package design_pattern.singleton;
+
+public class StaticSingleton {
+	private static StaticSingleton instance = null;
+	
+	private StaticSingleton(){}
+	
+	static {
+		instance = new StaticSingleton();
+	}
+	
+	public static StaticSingleton getInstance(){
+		return instance;
+	}
+}

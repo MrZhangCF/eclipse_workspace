@@ -1,0 +1,30 @@
+package demo;
+
+import java.util.Scanner;
+
+public class Netease2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		boolean [] results = new boolean[num];
+		for (int i = 0; i < results.length + 1; i++) {
+			String line = sc.nextLine();
+			results[i] = check(line);
+		}
+		for (int i = 0; i < results.length; i++) {
+			System.out.println(results[i]);
+		}
+	}
+	public static boolean check(String pw){
+		
+		if(pw.length() < 8){
+			return false;
+		}
+		
+		if(pw.contains("password")){
+			return false;
+		}
+		
+		return true;
+	}
+}

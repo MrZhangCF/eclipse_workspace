@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+ "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ 
+ <!-- 整体配置文件 -->
+<hibernate-configuration>
+	<session-factory>
+		<!-- 以下几条是数据库的连接 -->
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost:3306/hibernate
+		</property>
+		<property name="hibernate.connection.username">
+			root
+		</property>
+		<property name="hibernate.connection.password">
+			Aaa950114
+		</property>
+		
+		<!-- 表示会在程序进行的过程中打印数据库的具体执行语句 -->
+		<property name="hibernate.show_sql">
+			true
+		</property>
+		
+		<!-- 方言：进一步表明使用的数据库的类型 -->
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		
+		<!-- 表明Hibernate在处理数据表时的做法，取值有四个：create, create-drop, update, validate -->
+		<property name="hibernate.hbm2ddl.auto">
+			validate
+		</property>
+		
+		<!-- 添加实体类的映射文件 -->
+		<!-- <mapping resource="model/Student.hbm.xml" />
+		<mapping resource="model/Course.hbm.xml"/> -->
+		<mapping class="model.Student" />
+		<mapping class="model.Course" />
+		<!-- <mapping class="UserInfo2"/> -->
+	</session-factory>
+</hibernate-configuration>

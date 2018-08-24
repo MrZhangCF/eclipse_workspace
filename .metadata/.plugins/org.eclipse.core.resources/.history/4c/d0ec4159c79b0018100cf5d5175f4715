@@ -1,0 +1,43 @@
+package demo;
+
+import java.util.Scanner;
+
+public class Netease {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		int [] taxs = new int[num];
+		for (int i = 0; i < taxs.length; i++) {
+			int money = sc.nextInt();
+			taxs[i] = tax(money);
+			//System.out.println(taxs[i]);
+		}
+		for (int i = 0; i < taxs.length; i++) {
+			System.out.println(tax(i));
+		}
+	}
+	public static int tax(int money){
+		
+		money = money - 5000;
+		
+		if(money <= 0){
+			return 0;
+		}else if( money <= 3000){
+			return (int) Math.round(money * 0.03);
+		}else if(money <= 12000){
+			return (int) Math.round((money - 3000) * 0.1 + 90);
+		}else if(money <= 25000){
+			return (int) Math.round((money - 12000) * 0.2 + 900 + 90);
+		}else if(money <= 35000){
+			return (int) Math.round((money - 25000) * 0.25 + 2600 + 900 + 90);
+		}else if(money <= 55000){
+			return (int)Math.round((money - 35000) * 0.3 + 2500 + 2600 + 900 + 90);
+		}else if(money <= 80000){
+			return (int) Math.round((money - 55000) * 0.35 + 6000 + 5100 + 990);
+		}else{
+			return (int) Math.round((money - 80000) * 0.45 + 8750 + 11100 + 990);
+		}
+		
+	}
+	
+}

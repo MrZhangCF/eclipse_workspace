@@ -1,0 +1,4 @@
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://119.27.170.32:3306/waterdata?characterEncoding=utf-8
+jdbc.username=root
+jdbc.password=Aaa950114

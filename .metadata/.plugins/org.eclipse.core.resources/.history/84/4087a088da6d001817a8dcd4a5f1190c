@@ -1,0 +1,23 @@
+package demo;
+class SuperClass{
+	public final void fun1(){
+		
+	}
+	public void fun1(int x){
+		
+	}
+}
+class SubClass extends SuperClass{
+
+	@Override
+	public void fun1() {
+		super.fun1();
+	}
+	
+}
+public class TestDemo {
+	public static void main(String[] args) {
+		String s;
+		System.out.println(s);
+	}
+}

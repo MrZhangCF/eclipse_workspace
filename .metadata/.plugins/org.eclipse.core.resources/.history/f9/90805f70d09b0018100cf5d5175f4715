@@ -1,0 +1,56 @@
+package demo;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Netease3 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		List<String> list = new ArrayList<>();
+		
+		int num = Integer.parseInt(sc.nextLine());
+		for (int i = 0; i < num; i++) {
+			int pro_num = Integer.parseInt(sc.nextLine());
+			String pros [] = new String[pro_num];
+			for (int j = 0; j < pros.length; j++) {
+				pros[j] = sc.nextLine();
+				//System.out.println(pros[j]);
+			}
+			int test_num = Integer.parseInt(sc.nextLine());
+			
+			for (int j = 0; j < test_num; j++) {
+				String test = sc.nextLine();
+				list.add(check(test, pros));
+			}
+		}
+		
+		for (String string : list) {
+			System.out.println(string);
+		}
+	}
+	public static String check(String test, String[] pros){
+		
+		String new_pros[] = new String[pros.length];
+		String add[] = new String[pros.length];
+		
+		for (int i = 0; i < pros.length; i++) {
+			add[i] = pros[i].split(" ")[1];
+		}
+		
+		for (int i = 0; i < pros.length; i++) {
+			new_pros[i] = pros[i].split(" ")[0].split("x")[0];
+		}
+		
+		for (int i = 0; i < new_pros.length; i++) {
+			int length = new_pros[i].length();
+			String temp = test.substring(0, length);
+			if(temp.equals(new_pros[i])){
+				return add[i];
+			}
+		}
+		
+		return null;
+		
+	}
+}

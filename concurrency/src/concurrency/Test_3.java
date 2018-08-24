@@ -1,0 +1,48 @@
+package concurrency;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.locks.ReentrantLock;
+
+class TestReentrantLock{
+	private ReentrantLock lock = new ReentrantLock();
+	public void print(int str){
+		
+		try {
+			lock.lock();
+			System.out.println(str + "ªÒµ√");
+			Thread.sleep((int)(Math.random() * 1000));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			System.out.println(str + " Õ∑≈");
+			lock.unlock();
+		}
+		
+	}
+}
+
+public class Test_3 extends Thread{
+	TestReentrantLock lock;
+	private int id;
+	
+	public Test_3(int i, TestReentrantLock test) {
+		this.id = i;
+		this.lock = test;
+	}
+	
+	@Override
+	public void run() {
+		lock.print(id);
+	}
+	
+	public static void main(String[] args) {
+		ExecutorService service = Executors.newCachedThreadPool();
+		TestReentrantLock lock = new TestReentrantLock();
+		for (int i = 0; i < 10; i++) {
+			service.submit(new Test_3(i, lock));
+		}
+		service.shutdown();
+	}
+}

@@ -1,0 +1,12 @@
+<classpath>
+  <container id="StrutsIntercept!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/Server/eclipse_workspace/StrutsIntercept/WebContent/WEB-INF/lib/struts2-core-2.5.14.1.jar">
+      <source-attachment-path>D:/struts-2.5.14.1/src/src</source-attachment-path>
+    </entry>
+  </container>
+  <container id="strutsDemo!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/Server/eclipse_workspace/strutsDemo/WebContent/WEB-INF/lib/struts2-core-2.5.14.1.jar">
+      <source-attachment-path>D:/struts-2.5.14.1/src</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

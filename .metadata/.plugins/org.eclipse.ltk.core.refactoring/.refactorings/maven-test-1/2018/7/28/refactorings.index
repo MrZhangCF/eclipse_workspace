@@ -1,0 +1,9 @@
+1531131180036	Rename resource 'demo'
+1531131274185	Delete element
+1531133406885	Move 'RedisDao.java' to 'springmvc'
+1531134075682	Move 'RedisDao.java' to 'dao'
+1531134089378	Move 'RedisDaoImpl.java' to 'dao'
+1531134102566	Move 'JedisUtil.java' to 'dao'
+1531134134348	Move 'JedisUtil.java' to 'utils'
+1531135781711	Rename resource 'spring-mvc'
+1531141932123	Rename resource 'user-info-mapper.xml'

@@ -1,0 +1,5 @@
+1521705820660	Delete element
+1521719716850	Rename resource 'noregister.jsp'
+1521719753575	Move 'Noregister.jsp' to 'WebContent'
+1521719759561	Move 'Welcome.jsp' to 'WebContent'
+1521797534113	Rename local variable 'nameAndPhoneNumber'
